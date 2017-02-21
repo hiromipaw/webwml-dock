@@ -1,0 +1,11 @@
+webwml:
+  build: .
+  env_file: .env
+  volumes:
+    - ./scripts:/scripts
+    - ./config:/config
+    - ./webwml:/webwml
+    - ./tor:/tor
+  ports:
+    - "8080:8080"
+  command: bash -c "/scripts/startup.sh"
